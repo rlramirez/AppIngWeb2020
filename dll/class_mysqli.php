@@ -57,8 +57,8 @@ class clase_mysqli{
 		return mysqli_num_rows($this->Consulta_ID);
 	}
 	function verconsulta(){
-		$listGener[0]="Masculino";
-		$listGener[1]="Femenino";
+		$listGener[1]="Masculino";
+		$listGener[2]="Femenino";
 		echo "<table border=1 class='tableData'>";
 		echo "<tr>";
 		for ($i=0; $i < $this->numcampos() ; $i++) {
@@ -74,6 +74,32 @@ class clase_mysqli{
 					echo "<td>".$row[$i]."</td>";
 				}	
 			}
+			echo "</tr>";
+		}
+		echo "</table>";
+	}
+	function verconsulta_crud(){
+		$listGener[1]="Masculino";
+		$listGener[2]="Femenino";
+		echo "<table border=1 class='tableData'>";
+		echo "<tr>";
+		for ($i=0; $i < $this->numcampos() ; $i++) {
+			echo  "<th>".mysqli_fetch_field_direct($this->Consulta_ID, $i)->name."</th>";
+		}
+		echo  "<th>Actualizar</th>";
+		echo  "<th>Borrar</th>";
+		echo "</tr>";
+		while ($row=mysqli_fetch_array($this->Consulta_ID)) {
+			echo "<tr>";
+			for ($i=0; $i < $this->numcampos(); $i++) { 
+				if ($i==6) {
+					echo "<td>".$listGener[$row[$i]]."</td>";
+				}else{
+					echo "<td>".$row[$i]."</td>";
+				}	
+			}
+			echo "<td><a href='actualizar.php?id=$row[0]'>Actualizar</a></td>";
+			echo "<td><a href='borrar.php?id=$row[0]'>Borrar</a></td>";
 			echo "</tr>";
 		}
 		echo "</table>";

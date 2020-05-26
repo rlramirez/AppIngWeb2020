@@ -44,7 +44,7 @@
         <section class="formulario">
         <h3>LISTA DE INSCRITOS</h3>
             <?php
-            $miconexion->consulta("select * from inscritos");
+            $miconexion->consulta("select id, nombres, apellidos, correo from inscritos");
             $miconexion->verconsulta();
             ?>
         </section>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2020 a las 18:05:47
+-- Tiempo de generación: 26-05-2020 a las 20:03:49
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.1.33
 
@@ -43,7 +43,9 @@ CREATE TABLE `inscritos` (
 --
 
 INSERT INTO `inscritos` (`id`, `nombres`, `apellidos`, `correo`, `dni`, `pais`, `sexo`) VALUES
-(7, 'Ramiro', 'Ramirez', 'rlramirez@utpl.edu.ec', '1104076797', 'Ecuador', 0);
+(10, 'Ramiro', 'Ramirez', 'rlramirez@utpl.edu.ec', '1104076797', 'Ecuador', 1),
+(11, 'Carlos', 'Ramirez', 'mp@gmail.com1', '1121212111', 'Perú1', 1),
+(12, 'Carlos', 'Carrión', 'cc@gmail.com', '1121212111', 'Perú1', 1);
 
 -- --------------------------------------------------------
 
@@ -67,6 +69,29 @@ INSERT INTO `sensores` (`id`, `nombre`, `tipo`, `localidad`, `dato`) VALUES
 (1, 'Luz', 1, 'Edificio 1', 'json'),
 (2, 'Movimiento', 1, 'Edificio 2', 'json');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombres` varchar(200) NOT NULL,
+  `apellidos` varchar(200) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `clave` varchar(100) NOT NULL,
+  `rol` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombres`, `apellidos`, `correo`, `usuario`, `clave`, `rol`) VALUES
+(1, 'Ramiro Leonardo', 'Ramírez Coronel', 'rlramirez@utpl.edu.ec', 'rlramirez', '21232f297a57a5a743894a0e4a801fc3', 1);
+
 --
 -- Índices para tablas volcadas
 --
@@ -84,6 +109,12 @@ ALTER TABLE `sensores`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -91,13 +122,19 @@ ALTER TABLE `sensores`
 -- AUTO_INCREMENT de la tabla `inscritos`
 --
 ALTER TABLE `inscritos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `sensores`
 --
 ALTER TABLE `sensores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
