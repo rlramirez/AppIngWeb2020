@@ -51,5 +51,14 @@ if($actionName == "insertPost"){
     echo json_encode($resultData);
 }
 
+/*update: 
+actionName=='updatePost'
+id para el actualizar un solo registro 
+update inscritos set nombre='luis' where id=$id;
 
+delete
+actionName=='deletePost'
+id
+delete from inscritos where id=$id;
+*/
 ?>
