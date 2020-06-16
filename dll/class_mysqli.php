@@ -113,6 +113,17 @@ class clase_mysqli{
 			return $row;
 		}
 	}
+	function consulta_busqueda_json(){
+		if($this->numcampos() > 0){
+			while ($row = mysqli_fetch_array($this->Consulta_ID)) {
+				$data[]=$row;
+			}
+		    $resultData = array('status' => true, 'postData' => $data);
+	    }else{
+	    	$resultData = array('status' => false, 'message' => 'No Post(s) Found...');
+	    }
+	    echo  json_encode($resultData);
+	}
 
 
 }

@@ -36,10 +36,11 @@
     <main>
         <section class="formulario">
             <h3>FORMULARIO DE REGISTRO</h3>
-            <form action="../resources/registro.php" method="POST">
+            <form action="../index.php" method="POST">
                 <div class="grupoInput">
                     <label for="nombres">Nombres</label>
                     <input type="text" name="nombres" placeholder="Ingrese sus nombres">
+                    <input type="hidden" name="actionName" value="insertPost">
                 </div>
                 <div class="grupoInput">
                     <label for="apellidos">Apellidos</label>

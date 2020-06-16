@@ -31,6 +31,7 @@ include("security/security.php");
 			<a href="<?php echo $site_url; ?>admin/index.php"><i class="fas fa-home"></i> Inicio</a>
 			<a href="<?php echo $site_url; ?>admin/adm_registros/index.php"><i class="fa fa-user"></i> Registros</a>
 			<a href="#"><i class="fa fa-award"></i> Certificados</a>
+			<a href="#"><i class="fa fa-award"></i> Api - Json</a>
 			<a href="<?php echo $site_url; ?>admin/security/exit.php?salir=true"><i class="fa fa-power-off"></i> Salir</a>
 		</nav>
 	</section>
