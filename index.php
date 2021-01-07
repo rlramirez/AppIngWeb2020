@@ -51,6 +51,8 @@ if($actionName == "insertPost"){
     echo json_encode($resultData);
 }
 
+//esti es prueba
+
 /*update: 
 actionName=='updatePost'
 id para el actualizar un solo registro 
